@@ -1,0 +1,13 @@
+services:
+    kernel.listener.domain_listener:
+        class: AppVentus\MultiDomainBundle\EventListener\DomainListener
+        arguments: [@doctrine.orm.entity_manager]
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onDomainParse }
+
+    av_multi_domain.doctrine.prepersist:
+        class: AppVentus\MultiDomainBundle\EventListener\PrePersistSubscriber
+        arguments:
+            - "@service_container"
+        tags:
+            - { name:  doctrine.event_subscriber}
