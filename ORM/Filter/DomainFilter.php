@@ -9,12 +9,11 @@ class DomainFilter extends SQLFilter
 {
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias)
     {
-        // if (!$targetEntity->hasField('domain')) {
-        //     return true;
-        // }
+	if (!$targetEntity->hasAssociation('domain')) {
+	    return true;
+	}
         $select = "SELECT d.id as id FROM Domain d WHERE d.id = ".$targetTableAlias.'.domain_id';
 
-        // $select = "INNER JOIN domain AS d ON ".$targetTableAlias.".domain_id = d.id";
 
         return $select.' AND d.name = '. $this->getParameter('domain');
     }

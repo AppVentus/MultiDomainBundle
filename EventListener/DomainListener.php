@@ -17,7 +17,6 @@ class DomainListener
     public function onDomainParse(Event $event)
     {
         $request = $event->getRequest();
-        $session = $request->getSession();
 
         $this->em->getFilters()->getFilter('domain')->setParameter('domain', $request->getHost());
     }

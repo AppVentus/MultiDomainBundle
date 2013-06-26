@@ -49,9 +49,7 @@ class PrePersistSubscriber implements EventSubscriber
         $entity = $args->getEntity();
         if (method_exists($entity, "setDomain")) {
             $em = $this->container->get('doctrine.orm.entity_manager');
-            // $hostName = $em->getFilters()->getFilter('domain')->getParameter('domain');
             $hostName = $this->container->get('request')->getHost();
-            // print_r($hostName);exit;
             $host = $em->getRepository('AvMultiDomainBundle:Domain')->findOneByName($hostName);
             $entity->setDomain($host);
         }
