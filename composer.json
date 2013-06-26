@@ -1,0 +1,23 @@
+{
+    "name": "appventus/multi-domain-bundle",
+    "type": "symfony-bundle",
+    "description": "Handle multiple dns site management",
+    "keywords": ["dns", "domain", "multiple", "multi"],
+    "homepage": "http://appventus.com",
+    "license": "MIT",
+    "authors": [
+	{
+	    "name": "Paul Andrieux (AppVentus)",
+	    "email": "paul@appventus.com",
+	    "homepage": "http://appventus.com"
+	}
+    ],
+    "require-dev": {
+	"symfony/class-loader": "2.*"
+    },
+    "autoload": {
+	"psr-0": { "AppVentus\\MultiDomainBundle": "" }
+    },
+    "target-dir": "AppVentus/MultiDomainBundle",
+    "minimum-stability": "dev"
+}
