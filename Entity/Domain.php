@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Domain
  *
- * @ORM\Table()
+ * @ORM\Table(name="Domain")
  * @ORM\Entity
  */
 class Domain

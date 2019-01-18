@@ -1,7 +1,8 @@
 services:
     kernel.listener.domain_listener:
         class: AppVentus\MultiDomainBundle\EventListener\DomainListener
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: 
+            - "@doctrine.orm.entity_manager"
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onDomainParse }
 
