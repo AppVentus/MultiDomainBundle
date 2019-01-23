@@ -15,8 +15,17 @@ add
     }
 }
 ```
-    
+
 in your composer.json
+or `composer require appventus/multi-domain-bundle`
+
+register the bundle adding it to your bundles.php file
+```php
+return [
+	[...]
+	AppVentus\MultiDomainBundle\AvMultiDomainBundle::class => ['all' => true],
+];
+```
 
 and add the DomainTrait to all your domain managed entities:
 

@@ -18,6 +18,8 @@ class DomainListener
     {
         $request = $event->getRequest();
 
-        $this->em->getFilters()->getFilter('domain')->setParameter('domain', $request->getHost());
+        $this->em->getFilters()->getFilter('domain')
+            ->setParameter('domain', $request->getHost())
+            ->setEntityManager($this->em);
     }
 }
